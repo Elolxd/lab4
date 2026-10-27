@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -47,12 +49,12 @@ TagManager:
   - name: plat
     uniqueID: 2291955855
     locked: 0
-  - name: char
-    uniqueID: 1725478585
-    locked: 0
   - name: lake
     uniqueID: 3849540315
     locked: 0
   - name: trees
     uniqueID: 2014678513
+    locked: 0
+  - name: char
+    uniqueID: 1725478585
     locked: 0
