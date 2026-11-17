@@ -58,3 +58,6 @@ TagManager:
   - name: char
     uniqueID: 1725478585
     locked: 0
+  - name: coin
+    uniqueID: 2185948059
+    locked: 0
