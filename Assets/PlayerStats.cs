@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -17,7 +19,8 @@ public class PlayerStats : MonoBehaviour
     public bool isImmune = false;
     private float immunityTime = 0f;
     public float immunityDuration = 1.5f;
-    
+    public TextMeshProUGUI scoreUI;
+    public Image healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +45,13 @@ public class PlayerStats : MonoBehaviour
         if (!isImmune)
         {
             health -= damage;
+            healthBar.fillAmount = this.health/3f;
             if (health < 0) health =0;
             if (lives > 0 && health == 0)
             {
                 FindObjectOfType<LevelManager>().RespawnPLayer();
                 health = 3;
+                healthBar.fillAmount = this.health/3f;
                 lives--;
             }
             else if (lives == 0 && health == 0)
@@ -78,6 +83,6 @@ public class PlayerStats : MonoBehaviour
                 sr.enabled = true;
             }
         }
-        
+      scoreUI.text= " " + score;  
     }
 }
